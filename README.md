@@ -9,10 +9,38 @@ Este repositorio utiliza las siguientes herramientas:
 1. [ceedling]() para ejecutar las pruebas unitarias en forma automatizada
 1. [lcov]() para generar los informes de cobertura de las pruebas unitarias
 
-Después de clonar el repositorio usted debería ejecutar el siguiente comando:
+Después de clonar el repositorio base,usted debería ejecutar el siguiente comando:
 
 ```
 pre-commit install
+git add .
+pre-commit
+git commit -m "lo que se desee comentar"
+git push origin main
+```
+
+Dentro del repositorio base se tiene:
+- inc
+- src
+- .clang-format
+- .gitignore
+- .pre-commit-config.yaml
+- doxyfile
+- LICENSE.txt
+- makefile
+- README.md
+
+Se debe instalar ruby, gocv y ceedling
+'''
+sudo apt-get install ruby cogv
+sudo gem install ceedling
+sudo apt install gcovr
+'''
+Se instala gcovr si al tipear gcovr --version, nos muestra como comando desconocido.
+
+Ahora iniciamos un nuevo proyecto ceedling, es importante no tener creado la carpeta test y tampo tener el archivo project.yml.
+```
+ceedling new .
 ```
 
 Para ejecutar las pruebas unitarias se utiliza el siguiente comando:
