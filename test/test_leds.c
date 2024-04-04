@@ -48,3 +48,11 @@ void test_consultar_estado_led_prendido(void) {
     leds_turn_on(LED);
     TEST_ASSERT_EQUAL_INT(1, led_state(LED));
 }
+
+// test consultar el estado de un led que este apagado
+
+void test_consultar_estado_led_apagado(void) {
+    leds_turn_on(LED);
+    leds_turn_off(LED);
+    TEST_ASSERT_EQUAL_INT(0, led_state(LED));
+}
